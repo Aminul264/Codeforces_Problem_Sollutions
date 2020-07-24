@@ -1,0 +1,64 @@
+/*
+                              0
+                            0 1 0
+                          0 1 2 1 0
+             STAY       0 1 2 3 2 1 0      HOME
+                      0 1 2 3 4 3 2 1 0
+                    0 1 2 3 4 5 4 3 2 1 0
+                  0 1 2 3 4 5 6 5 4 3 2 1 0
+                0 1 2 3 4 5 6 7 6 5 4 3 2 1 0
+              0 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 0
+            0 1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1 0
+              0 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 0
+                0 1 2 3 4 5 6 7 6 5 4 3 2 1 0
+                  0 1 2 3 4 5 6 5 4 3 2 1 0
+                    0 1 2 3 4 5 4 3 2 1 0
+                      0 1 2 3 4 3 2 1 0
+               SAFE     0 1 2 3 2 1 0     STAY
+                          0 1 2 1 0
+                            0 1 0
+                              0
+*/
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+typedef vector<long long>vl;
+typedef vector<int> v;
+typedef vector<long double> vdl;
+
+void solve(){
+    ll n,i,j,sum, eksho=0,dusho=0,t=0;
+    cin>>n;
+	 v data(n);
+	 
+	 for(i=0;i<n;i++){
+	 	 cin>>data[i];
+	 	 if(data[i]==100)
+	 	   eksho++;
+	 	   else
+	 	   dusho++;
+	 }
+	// cout<<eksho<<" "<<dusho<<endl;
+	 if(eksho%2==0 && dusho%2==0)
+	   cout<<"YES"<<endl;
+	   else if(dusho%2 && eksho%2==0 && eksho>=2 )
+	    cout<<"YES"<<endl;
+	    else
+	    cout<<"NO"<<endl;
+    
+}
+
+ int main(){
+        int test=1;
+           // cin>>test;
+        while(test--){
+            solve();
+        }
+    return 0;
+}
+
+
